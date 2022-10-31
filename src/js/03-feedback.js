@@ -7,7 +7,7 @@ feedbackForm.addEventListener('input', throttle(input, 500));
 feedbackForm.addEventListener('submit', submit);
 
 
-const input = (event) => {
+function input(event) {
   const formData = {}
   formData.email = event.currentTarget.elements.email.value
   formData.message = event.currentTarget.elements.message.value
@@ -15,7 +15,7 @@ const input = (event) => {
   console.log(localStorage.getItem("feedback-form-state"))
 }
 
-const submit = (event) => {
+function submit(event) {
     console.log(JSON.parse(localStorage.getItem("feedback-form-state")))
     event.preventDefault();
     event.currentTarget.reset();
@@ -23,7 +23,7 @@ const submit = (event) => {
 }
 
 
-const localData = () => {
+function localData() {
   const data = JSON.parse(localStorage.getItem("feedback-form-state"));
   const email = document.querySelector(".feedback-form input");
     const message = document.querySelector(".feedback-form textarea");
