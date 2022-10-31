@@ -25,3 +25,5 @@ import throttle from 'lodash.throttle';
             player.setCurrentTime(localStorage.getItem("videoplayer-current-time"));
         }
     }); 
+
+    // test
