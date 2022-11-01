@@ -8,9 +8,13 @@ feedbackForm.addEventListener('submit', submit);
 let formData = JSON.parse(localStorage.getItem("feedback-form-state")) || {}
 localData()
 function input(event) {
+  if (event.target.name === `email`) {
+    formData.email = event.target.value
+  }
+  if (event.target.name === `message`) {
+    formData.message = event.target.value
+  }
   
-  formData.email = event.currentTarget.elements.email.value
-  formData.message = event.currentTarget.elements.message.value
   localStorage.setItem("feedback-form-state", JSON.stringify(formData))
 }
 
